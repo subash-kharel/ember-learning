@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"/Users/subashkharel/Documents/emberLearnings/ember-learning/app/styles","sources":["../../out-220-broccoli_merge_trees_full_application/app/styles/app.scss"],"names":[],"mappings":"AAAA;EACI","file":"ember-learnings.css","sourcesContent":["body {\n    background-color: red;\n}"]}
+{"version":3,"sourceRoot":"/Users/subashkharel/Documents/emberLearnings/ember-learning/app/styles","sources":[],"names":[],"mappings":"","file":"ember-learnings.css","sourcesContent":[]}

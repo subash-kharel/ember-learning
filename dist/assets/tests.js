@@ -7,6 +7,61 @@ define("ember-learnings/tests/test-helper", ["ember-learnings/app", "ember-learn
   (0, _qunitDom.setup)(QUnit.assert);
   (0, _emberQunit.start)();
 });
+define("ember-learnings/tests/unit/routes/clothes-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | clothes', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:clothes');
+      assert.ok(route);
+    });
+  });
+});
+define("ember-learnings/tests/unit/routes/clothes/index-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | clothes/index', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:clothes/index');
+      assert.ok(route);
+    });
+  });
+});
+define("ember-learnings/tests/unit/routes/clothes/t-shirt-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | clothes/t-shirt', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:clothes/t-shirt');
+      assert.ok(route);
+    });
+  });
+});
+define("ember-learnings/tests/unit/routes/item-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | item', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:item');
+      assert.ok(route);
+    });
+  });
+});
+define("ember-learnings/tests/unit/routes/not-found-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | not-found', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:not-found');
+      assert.ok(route);
+    });
+  });
+});
 define('ember-learnings/config/environment', [], function() {
   var prefix = 'ember-learnings';
 try {

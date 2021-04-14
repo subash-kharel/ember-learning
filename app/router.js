@@ -6,4 +6,12 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function () {});
+
+// here clothes is the basic route and tshirt is the nested router coz it is nested inside clothes
+Router.map(function () {
+  this.route('clothes', function() {
+    this.route('t-shirt');
+  });
+  this.route('item', {path: '/item/:item_id'});
+  this.route('not-found', {path: '/*path'});
+});

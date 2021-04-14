@@ -330,10 +330,87 @@
       _defineProperty(this, "rootURL", _environment.default.rootURL);
     }
 
-  }
+  } // here clothes is the basic route and tshirt is the nested router coz it is nested inside clothes
+
 
   _exports.default = Router;
-  Router.map(function () {});
+  Router.map(function () {
+    this.route('clothes', function () {
+      this.route('t-shirt');
+    });
+    this.route('item', {
+      path: '/item/:item_id'
+    });
+    this.route('not-found', {
+      path: '/*path'
+    });
+  });
+});
+;define("ember-learnings/routes/clothes", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class ClothesRoute extends Ember.Route {}
+
+  _exports.default = ClothesRoute;
+});
+;define("ember-learnings/routes/clothes/index", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class ClothesIndexRoute extends Ember.Route {}
+
+  _exports.default = ClothesIndexRoute;
+});
+;define("ember-learnings/routes/clothes/t-shirt", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class ClothesTShirtRoute extends Ember.Route {}
+
+  _exports.default = ClothesTShirtRoute;
+});
+;define("ember-learnings/routes/item", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class ItemRoute extends Ember.Route {
+    //need this for dynamic route
+    model(params) {
+      return params.item_id;
+    }
+
+  }
+
+  _exports.default = ItemRoute;
+});
+;define("ember-learnings/routes/not-found", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class NotFoundRoute extends Ember.Route {}
+
+  _exports.default = NotFoundRoute;
 });
 ;define("ember-learnings/serializers/-default", ["exports", "@ember-data/serializer/json"], function (_exports, _json) {
   "use strict";
@@ -430,6 +507,91 @@
 
   _exports.default = _default;
 });
+;define("ember-learnings/templates/clothes", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "oDvKwPKi",
+    "block": "[[[1,[28,[35,0],[\"Clothes\"],null]],[1,\"\\n\"],[10,\"h1\"],[12],[1,\"Clothes work!\"],[13],[1,\"\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/clothes.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("ember-learnings/templates/clothes/index", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "IoANCNgw",
+    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\nindex content\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/clothes/index.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("ember-learnings/templates/clothes/t-shirt", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "ETQtwjJS",
+    "block": "[[[1,[28,[35,0],[\"TShirt\"],null]],[1,\"\\nT-shirt route\\n\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/clothes/t-shirt.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("ember-learnings/templates/item", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "hmGjcoME",
+    "block": "[[[1,[28,[35,0],[\"Item\"],null]],[1,\"\\n\\nItem \"],[1,[30,0,[\"model\"]]],[1,\" works!\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/item.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("ember-learnings/templates/not-found", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "w7HK6nem",
+    "block": "[[[1,[28,[35,0],[\"NotFound\"],null]],[1,\"\\n\"],[10,\"h1\"],[12],[1,\" 404 NOT FOUND\"],[13],[1,\"\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/not-found.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
 ;define("ember-learnings/transforms/boolean", ["exports", "@ember-data/serializer/-private"], function (_exports, _private) {
   "use strict";
 
@@ -505,7 +667,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-learnings/app")["default"].create({"name":"ember-learnings","version":"0.0.0+d63bd172"});
+            require("ember-learnings/app")["default"].create({"name":"ember-learnings","version":"0.0.0+12bccd13"});
           }
         
 //# sourceMappingURL=ember-learnings.map
