@@ -7,6 +7,17 @@ define("ember-learnings/tests/test-helper", ["ember-learnings/app", "ember-learn
   (0, _qunitDom.setup)(QUnit.assert);
   (0, _emberQunit.start)();
 });
+define("ember-learnings/tests/unit/routes/cart-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | cart', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:cart');
+      assert.ok(route);
+    });
+  });
+});
 define("ember-learnings/tests/unit/routes/clothes-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
@@ -18,17 +29,6 @@ define("ember-learnings/tests/unit/routes/clothes-test", ["qunit", "ember-qunit"
     });
   });
 });
-define("ember-learnings/tests/unit/routes/clothes/index-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Route | clothes/index', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks);
-    (0, _qunit.test)('it exists', function (assert) {
-      let route = this.owner.lookup('route:clothes/index');
-      assert.ok(route);
-    });
-  });
-});
 define("ember-learnings/tests/unit/routes/clothes/t-shirt-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
@@ -36,6 +36,17 @@ define("ember-learnings/tests/unit/routes/clothes/t-shirt-test", ["qunit", "embe
     (0, _emberQunit.setupTest)(hooks);
     (0, _qunit.test)('it exists', function (assert) {
       let route = this.owner.lookup('route:clothes/t-shirt');
+      assert.ok(route);
+    });
+  });
+});
+define("ember-learnings/tests/unit/routes/index-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | index', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:index');
       assert.ok(route);
     });
   });

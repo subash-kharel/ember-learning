@@ -335,18 +335,18 @@
 
   _exports.default = Router;
   Router.map(function () {
-    this.route('clothes', function () {
-      this.route('t-shirt');
-    });
     this.route('item', {
       path: '/item/:item_id'
     });
     this.route('not-found', {
       path: '/*path'
     });
+    this.route('cart', {
+      path: 'shopping-cart'
+    });
   });
 });
-;define("ember-learnings/routes/clothes", ["exports"], function (_exports) {
+;define("ember-learnings/routes/cart", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -354,11 +354,11 @@
   });
   _exports.default = void 0;
 
-  class ClothesRoute extends Ember.Route {}
+  class CartRoute extends Ember.Route {}
 
-  _exports.default = ClothesRoute;
+  _exports.default = CartRoute;
 });
-;define("ember-learnings/routes/clothes/index", ["exports"], function (_exports) {
+;define("ember-learnings/routes/index", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -366,21 +366,9 @@
   });
   _exports.default = void 0;
 
-  class ClothesIndexRoute extends Ember.Route {}
+  class IndexRoute extends Ember.Route {}
 
-  _exports.default = ClothesIndexRoute;
-});
-;define("ember-learnings/routes/clothes/t-shirt", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  class ClothesTShirtRoute extends Ember.Route {}
-
-  _exports.default = ClothesTShirtRoute;
+  _exports.default = IndexRoute;
 });
 ;define("ember-learnings/routes/item", ["exports"], function (_exports) {
   "use strict";
@@ -499,15 +487,15 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "XL24TMB4",
-    "block": "[[[1,[28,[35,0],[\"EmberLearnings\"],null]],[1,\"\\n\\n\"],[10,\"h1\"],[12],[1,\" hello\"],[13],[1,\"\\n\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "id": "PRTS0g22",
+    "block": "[[[1,[28,[35,0],[\"EmberLearnings\"],null]],[1,\"\\n\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
     "moduleName": "ember-learnings/templates/application.hbs",
     "isStrictMode": false
   });
 
   _exports.default = _default;
 });
-;define("ember-learnings/templates/clothes", ["exports"], function (_exports) {
+;define("ember-learnings/templates/cart", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -516,15 +504,15 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "oDvKwPKi",
-    "block": "[[[1,[28,[35,0],[\"Clothes\"],null]],[1,\"\\n\"],[10,\"h1\"],[12],[1,\"Clothes work!\"],[13],[1,\"\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
-    "moduleName": "ember-learnings/templates/clothes.hbs",
+    "id": "fAwjVSdv",
+    "block": "[[[1,[28,[35,0],[\"Cart\"],null]],[1,\"\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "ember-learnings/templates/cart.hbs",
     "isStrictMode": false
   });
 
   _exports.default = _default;
 });
-;define("ember-learnings/templates/clothes/index", ["exports"], function (_exports) {
+;define("ember-learnings/templates/index", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -533,26 +521,9 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "IoANCNgw",
-    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\nindex content\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
-    "moduleName": "ember-learnings/templates/clothes/index.hbs",
-    "isStrictMode": false
-  });
-
-  _exports.default = _default;
-});
-;define("ember-learnings/templates/clothes/t-shirt", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.HTMLBars.template({
-    "id": "ETQtwjJS",
-    "block": "[[[1,[28,[35,0],[\"TShirt\"],null]],[1,\"\\nT-shirt route\\n\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
-    "moduleName": "ember-learnings/templates/clothes/t-shirt.hbs",
+    "id": "f6rROJ+s",
+    "block": "[[[8,[39,0],[[24,1,\"cart-link\"]],[[\"@route\"],[\"cart\"]],[[\"default\"],[[[[1,\"\\n\"],[10,\"i\"],[14,0,\"fa fa-shopping-cart\"],[12],[13],[1,\"\\n\"]],[]]]]],[1,\"\\n\"],[10,\"main\"],[14,0,\"container mt-5\"],[12],[1,\"\\n    \"],[8,[39,0],null,[[\"@route\",\"@model\"],[\"item\",\"1\"]],[[\"default\"],[[[[1,\"Product1\"]],[]]]]],[1,\"\\n    \"],[8,[39,0],null,[[\"@route\",\"@model\"],[\"item\",\"2\"]],[[\"default\"],[[[[1,\"Product2\"]],[]]]]],[1,\"\\n\"],[13]],[],false,[\"link-to\"]]",
+    "moduleName": "ember-learnings/templates/index.hbs",
     "isStrictMode": false
   });
 
@@ -667,7 +638,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-learnings/app")["default"].create({"name":"ember-learnings","version":"0.0.0+12bccd13"});
+            require("ember-learnings/app")["default"].create({"name":"ember-learnings","version":"0.0.0+857e1881"});
           }
         
 //# sourceMappingURL=ember-learnings.map
